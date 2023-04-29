@@ -1,4 +1,4 @@
-const Card = require("./src/_includes/components/Card");
+const Post = require("./src/_includes/components/Post");
 
 const Image = require("@11ty/eleventy-img");
 
@@ -21,11 +21,11 @@ const Image = require("@11ty/eleventy-img");
 // }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/images/");
-  eleventyConfig.addPassthroughCopy("src/css/");
-  eleventyConfig.addWatchTarget("src/css/");
+  eleventyConfig.addPassthroughCopy("src/assets/images/");
+  eleventyConfig.addPassthroughCopy("src/assets/css/");
+  eleventyConfig.addWatchTarget("src/assets/css/");
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-  eleventyConfig.addShortcode("Card", Card);
+  eleventyConfig.addShortcode("Post", Post);
   // eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
 
   return {

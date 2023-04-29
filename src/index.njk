@@ -7,5 +7,12 @@ title: Worm & Co
 <p>hello worm</p>
 <a href="/contact">go to contact</a>
 {# {% EleventyImage "images/favicon.ico" alt="star" %} #}
-{% Card title="Hello", link="/contact", linkText="go to contact" %}
-<div class="font-extrabold text-center">Test class</div>
+
+<div>
+{% for post in posts %}
+{% Post title=post.title, link=post.link, linkText=post.linkText %}
+{% endfor %}
+</div>
+
+
+

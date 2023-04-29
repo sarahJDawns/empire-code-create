@@ -4,7 +4,7 @@ module.exports = {
     "./src/*/*/*.{html,js,njk}",
     "./src/index.njk",
     "./src/contact.njk.js",
-    "./src/css/*.css",
+    "./src/assets/css/*.css",
   ],
   theme: {
     extend: {},
