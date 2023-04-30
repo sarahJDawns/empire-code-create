@@ -4,7 +4,7 @@ pagination:
   size: 1 
   alias: tag 
   addAllPagesToCollections: true 
-layout: layouts/base.njk 
+layout: layouts/partials/base.njk 
 permalink: /blog/tag/{{tag | slugify }}
 eleventyComputed: 
   title: Posts Tagged with {{tag}}

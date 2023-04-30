@@ -1,11 +1,11 @@
-{% extends 'layouts/base.njk' %}
+{% extends 'layouts/partials/base.njk' %}
 
 
 
 
 {% block content %}
   <article>
-  <img src="{{ image }}" alt="{{ imageAlt }}">
+    <img src="{{ image }}" alt="{{ imageAlt }}">
     <h1>{{ title }}</h1>
     <p>
       <time>{{ date | postDate}}</time>
@@ -14,11 +14,12 @@
     <p>{{author}}</p>
     
     {{ content | safe }}
+
     <ul>
       {% for tag in tags %}
-        <li>
-          <a href="/blog/tag/{{ tag | slugify }}">{{ tag }}</a>
-        </li>
+      <li>
+        <a href="/blog/tag/{{ tag | slugify }}">{{ tag }}</a>
+      </li>
       {% endfor %}
     </ul>
   </article>

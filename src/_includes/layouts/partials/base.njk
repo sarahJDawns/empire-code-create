@@ -13,9 +13,9 @@
 
   <body>
     {% block content %}
-      {% include 'layouts/header.njk' %}
+      {% include 'layouts/partials/header.njk' %}
       {{ content | safe }}
-      {% include 'layouts/footer.njk' %}
+      {% include 'layouts/partials/footer.njk' %}
     {% endblock %}
   </body>
 
