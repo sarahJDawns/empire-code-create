@@ -4,9 +4,10 @@ title: example post
 description: this is some example post
 date: 2023-05-20
 author: sarah j dawns
-categories:
+tags:
   - Post
   - worms
+  - bins
 ---
 
 ## test 2
