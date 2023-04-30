@@ -1,6 +1,6 @@
----
-layout: layouts/base.njk
-title: Worm & Co
+--- 
+layout: layouts/base.njk 
+title: Worm & Co 
 ---
 
 <h1>{{title}}</h1>
@@ -9,10 +9,9 @@ title: Worm & Co
 <img src="/assets/images/favicon.ico" alt="star">
 
 <div>
-{% for card in cards %}
-{% Card title=card.title, link=card.link, linkText=card.linkText %}
-{% endfor %}
+  {% for card in cards %}
+    {% Card title = card.title,
+    link = card.link,
+    linkText = card.linkText %}
+  {% endfor %}
 </div>
-
-
-

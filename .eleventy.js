@@ -1,6 +1,12 @@
+const { DateTime } = require("luxon");
+const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const Card = require("./src/_includes/components/Card");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+  eleventyConfig.addPlugin(lazyImagesPlugin);
   eleventyConfig.addPassthroughCopy("src/assets/images/");
   eleventyConfig.addPassthroughCopy("src/assets/css/");
   eleventyConfig.addWatchTarget("src/assets/css/");

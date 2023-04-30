@@ -1,13 +1,12 @@
 ---
 layout: layouts/posts.njk
-title: example post 2
+title: example post 3
 description: this is some example post
-date: 2023-05-20
+date: 2023-05-30
 author: sarah j dawns
 tags:
-  - Post
   - worms
-  - bins
+  - grid
 ---
 
 ## test 2

@@ -5,17 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy --serve --port=2121",
-    "build": "npx tailwindcss -i src/assets/css/input.css -o src/assets/css/main.css",
-    "watch": "tailwindcss -i src/assets/css/input.css -o src/assets/css/main.css --watch",
-    "dev": "concurrently \"npm run start\" \"npm run watch\" "
+    "build": "set NODE_ENV=production postcss src/assets/css/input.css -o src/assets/css/main.css --config postcss.config.js",
+    "watch": "postcss src/assets/css/input.css -o src/assets/css/main.css --watch --config postcss.config.js",
+    "dev": "concurrently \"npm run start\" \"npm run watch\""
   },
   "author": "sarahjdawns",
   "license": "ISC",
   "keywords": [],
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.14",
     "common-tags": "^1.8.2",
     "concurrently": "^8.0.1",
+    "cssnano": "^6.0.1",
+    "eleventy-plugin-lazyimages": "^2.1.2",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
     "tailwindcss": "^3.3.2"
   }
 }

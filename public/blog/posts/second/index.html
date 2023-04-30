@@ -1,43 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example post 2</title>
+    <link rel="icon" type="image" sizes="32x32" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/input.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    example post
-  </title>
-  <link rel="icon" type="image" sizes="32x32" href="/assets/images/favicon.ico" />
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/input.css" />
-</head>
-
-<body>
-
-<article>
-<h1>example post</h1>
-<p><time>Fri May 19 2023 18:00:00 GMT-0600 (Mountain Daylight Time)</time></p>
-<ul>
-
-<li>
-<a href="/blog/tag/post">Post</a>
-</li>
-
-<li>
-<a href="/blog/tag/worms">worms</a>
-</li>
-
-<li>
-<a href="/blog/tag/bins">bins</a>
-</li>
-
-</ul>
-<h2>test 2</h2>
+  <body>
+    
+  <article>
+  <img src="" alt="" data-src="" class="lazyload">
+    <h1>example post 2</h1>
+    <p>
+      <time>May 19, 2023</time>
+    </p>
+    <p>this is some example post</p>
+    <p>sarah j dawns</p>
+    
+    <h2>test 2</h2>
 <p>lksdfj;alkjfs; alskdjfa;lskdjfa;lskdf;alksd;jfa;sdlkjf;alksjd;flaj;sldfja;lskdjf;alskjd;falks</p>
 
-</article>
+    <ul>
+      
+        <li>
+          <a href="/blog/tag/post">Post</a>
+        </li>
+      
+        <li>
+          <a href="/blog/tag/worms">worms</a>
+        </li>
+      
+        <li>
+          <a href="/blog/tag/bins">bins</a>
+        </li>
+      
+    </ul>
+  </article>
 
-</body>
+  
 
-</html>
+<script>
+            (function (selector, src, preferNativeLazyLoad) {
+  var images = document.querySelectorAll(selector);
+  var numImages = images.length;
+
+  if (numImages > 0) {
+    if (preferNativeLazyLoad && 'loading' in HTMLImageElement.prototype) {
+      for (var i = 0; i < numImages; i++) {
+        var keys = ['src', 'srcset'];
+
+        for (var j = 0; j < keys.length; j++) {
+          if (images[i].hasAttribute('data-' + keys[j])) {
+            var value = images[i].getAttribute('data-' + keys[j]);
+            images[i].setAttribute(keys[j], value);
+          }
+        }
+      }
+
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = src;
+    document.body.appendChild(script);
+  }
+})(
+              'img',
+              'https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js',
+              false
+            );
+          </script></body></html>

@@ -1,20 +1,25 @@
 {% extends 'layouts/base.njk' %}
 
-{% block head %}
 
-{% endblock %}
+
 
 {% block content %}
-<article>
-<h1>{{title}}</h1>
-<p><time>{{ date }}</time></p>
-<ul>
-{% for tag in tags %}
-<li>
-<a href="/blog/tag/{{ tag | slugify }}">{{tag}}</a>
-</li>
-{% endfor %}
-</ul>
-{{ content | safe }}
-</article>
+  <article>
+  <img src="{{ image }}" alt="{{ imageAlt }}">
+    <h1>{{ title }}</h1>
+    <p>
+      <time>{{ date | postDate}}</time>
+    </p>
+    <p>{{description}}</p>
+    <p>{{author}}</p>
+    
+    {{ content | safe }}
+    <ul>
+      {% for tag in tags %}
+        <li>
+          <a href="/blog/tag/{{ tag | slugify }}">{{ tag }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </article>
 {% endblock %}

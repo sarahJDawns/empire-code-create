@@ -1,6 +1,6 @@
 ---
 layout: layouts/posts.njk
-title: example post
+title: example post 1
 description: this is some example post
 date: 2023-05-15
 author: sarah j dawns

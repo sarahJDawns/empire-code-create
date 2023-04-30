@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    Posts Tagged with bins
-  </title>
-  <link rel="icon" type="image" sizes="32x32" href="/assets/images/favicon.ico" />
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/input.css" />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Tagged with bins</title>
+    <link rel="icon" type="image" sizes="32x32" href="/assets/images/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="stylesheet" href="/assets/css/input.css"/>
+  </head>
 
-<body>
-
-  
-  
-<h1>Posts Tagged with [tag]</h1>
+  <body>
+    
+      
+      
+<h1>Posts Tagged with bins</h1>
 
 
-<li>
-<a href="/blog/posts/second/">example post</a>
-</li>
+  <li>
+    <a href="/blog/posts/second/">example post 2</a>
+  </li>
 
-  <footer >
-  <p>&copy; Sarah J Dawns 2023</p>
+      <footer >
+  <p>&copy; Sarah J Dawns
+    2023</p>
 </footer>
-  
-</body>
+    
+  </body>
 
 </html>
