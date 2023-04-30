@@ -6,11 +6,11 @@ title: Worm & Co
 <h1>{{title}}</h1>
 <p>hello worm</p>
 <a href="/contact">go to contact</a>
-{# {% EleventyImage "images/favicon.ico" alt="star" %} #}
+<img src="/assets/images/favicon.ico" alt="star">
 
 <div>
-{% for post in posts %}
-{% Post title=post.title, link=post.link, linkText=post.linkText %}
+{% for card in cards %}
+{% Card title=card.title, link=card.link, linkText=card.linkText %}
 {% endfor %}
 </div>
 

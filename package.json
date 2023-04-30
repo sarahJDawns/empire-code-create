@@ -14,10 +14,8 @@
   "keywords": [],
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "common-tags": "^1.8.2",
     "concurrently": "^8.0.1",
     "tailwindcss": "^3.3.2"
-  },
-  "dependencies": {
-    "@11ty/eleventy-img": "^3.1.0"
   }
 }
