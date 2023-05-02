@@ -1,5 +1,5 @@
 ---
-layout: layouts/posts.njk
+layout: layouts/post.njk
 title: example post 3
 description: this is some example post
 date: 2023-05-30

@@ -1,18 +1,33 @@
 --- 
-layout: layouts/partials/base.njk 
+layout: partials/base.njk 
 title: Empire Compost Club 
 ---
 
-<section class="flex flex-col justify-center" >
-  <h1 class="text-center">{{title}}</h1>
-  <p class= "text-slate-500 text-center">hello worm</p>
-  <a href="/contact">go to contact</a>
-  <img src="/assets/images/favicon.ico" alt="star" width=25px>
-  <div>
-    {% for card in cards %}
-      {% Card title = card.title,
-      link = card.link,
-      linkText = card.linkText %}
-    {% endfor %}
-  </div>
-</section>
+<section class="flex flex-col justify-center">
+  <h1 class="text-center">{{ title }}</h1>
+  <div class="container px-8 pt-24 mx-auto lg:px-4">
+    <div class="flex flex-wrap text-left">
+      <div class="px-8 py-6 lg:w-1/3 md:w-full">
+        <div class="p-6 rounded-md bg-slate-200">
+          {% block content %}
+            <div class="max-w-2xl mx-auto">
+              {% set mostRecentPost = collections.posts[0] %}
+              <img class="object-cover object-center w-full h-40 mb-6 rounded" src="{{ mostRecentPost.url }}{{ mostRecentPost.data.image }}" alt="blogpost image">
+                <h1>{{ mostRecentPost.data.title }}</h1>
+                {{ mostRecentPost.content | safe }}
+              </div>
+              <ul>
+                {% for tag in tags %}
+                  <li>
+                    <a href="/archive/tag/{{ tag | slugify }}">{{ tag }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-slate-500 text-center">hello worm</p>
+    <a href="/archive">go to archive</a>
+    <img src="/assets/images/favicon.png" alt="star" width="25px"></section>

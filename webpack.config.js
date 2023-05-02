@@ -30,7 +30,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "public", "assets", "js"),
-    filename: "main.bundle.js",
+    filename: "main.js",
   },
   plugins: [
     new MiniCssExtractPlugin({

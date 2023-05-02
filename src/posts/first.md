@@ -1,15 +1,14 @@
 ---
-layout: layouts/posts.njk
-title: example post 2
+layout: layouts/post.njk
+title: example post 1
 description: this is some example post
-date: 2023-05-20
+date: 2023-05-15
 author: sarah j dawns
 tags:
   - Post
   - worms
-  - bins
 ---
 
-## test 2
+## test
 
 lksdfj;alkjfs; alskdjfa;lskdjfa;lskdf;alksd;jfa;sdlkjf;alksjd;flaj;sldfja;lskdjf;alskjd;falks
