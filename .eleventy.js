@@ -10,6 +10,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/images/");
   eleventyConfig.addPassthroughCopy("src/assets/css/");
   eleventyConfig.addWatchTarget("src/assets/css/");
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: "<!--more-->",
+  });
+  eleventyConfig.setTemplateFormats(["md", "njk", "jpg", "png", "webp"]);
+  eleventyConfig.setBrowserSyncConfig({
+    files: ["public/**/*"],
+    open: true,
+  });
+  eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addShortcode("Card", Card);
   eleventyConfig.addCollection("posts", function (collectionApi) {

@@ -10,7 +10,7 @@ eleventyComputed:
   title: Posts Tagged with {{tag}}
 ---
 
-<h1>Posts Tagged with {{tag}}</h1>
+<h1 class="text-red-500">Posts Tagged with {{tag}}</h1>
 
 {% for post in collections[tag]%}
   <li>

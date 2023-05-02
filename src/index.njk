@@ -1,17 +1,18 @@
 --- 
 layout: layouts/partials/base.njk 
-title: Worm & Co 
+title: Empire Compost Club 
 ---
 
-<h1>{{title}}</h1>
-<p>hello worm</p>
-<a href="/contact">go to contact</a>
-<img src="/assets/images/favicon.ico" alt="star">
-
-<div>
-  {% for card in cards %}
-    {% Card title = card.title,
-    link = card.link,
-    linkText = card.linkText %}
-  {% endfor %}
-</div>
+<section class="flex flex-col justify-center" >
+  <h1 class="text-center">{{title}}</h1>
+  <p class= "text-slate-500 text-center">hello worm</p>
+  <a href="/contact">go to contact</a>
+  <img src="/assets/images/favicon.ico" alt="star" width=25px>
+  <div>
+    {% for card in cards %}
+      {% Card title = card.title,
+      link = card.link,
+      linkText = card.linkText %}
+    {% endfor %}
+  </div>
+</section>

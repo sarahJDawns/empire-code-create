@@ -9,17 +9,19 @@
     <link rel="icon" type="image" sizes="32x32" href="/assets/images/favicon.ico"/>
     <link rel="stylesheet" href="/assets/css/main.css"/>
     <link rel="stylesheet" href="/assets/css/input.css"/>
+    <script src="/assets/main.bundle.js" defer></script>
   </head>
 
-  <body>
-    
+  <body class="flex flex-col min-h-screen">
+    <main class="container flex-grow py-8">
       
-      
-<h1>Posts Tagged with all</h1>
+        
+        
+<h1 class="text-red-500">Posts Tagged with all</h1>
 
 
   <li>
-    <a href="/">Worm &amp; Co</a>
+    <a href="/">Empire Compost Club</a>
   </li>
 
   <li>
@@ -35,15 +37,15 @@
   </li>
 
   <li>
-    <a href="/blog/tag/post">Posts Tagged with Post</a>
-  </li>
-
-  <li>
     <a href="/blog/tag/worms">Posts Tagged with worms</a>
   </li>
 
   <li>
     <a href="/blog/tag/grid">Posts Tagged with grid</a>
+  </li>
+
+  <li>
+    <a href="/blog/tag/post">Posts Tagged with Post</a>
   </li>
 
   <li>
@@ -66,11 +68,12 @@
     <a href="/blog/posts/third/">example post 3</a>
   </li>
 
-      <footer >
+        <footer >
   <p>&copy; Sarah J Dawns
     2023</p>
 </footer>
-    
+      
+    </main>
   </body>
 
 </html>

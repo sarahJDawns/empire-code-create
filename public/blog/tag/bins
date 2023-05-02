@@ -9,24 +9,27 @@
     <link rel="icon" type="image" sizes="32x32" href="/assets/images/favicon.ico"/>
     <link rel="stylesheet" href="/assets/css/main.css"/>
     <link rel="stylesheet" href="/assets/css/input.css"/>
+    <script src="/assets/main.bundle.js" defer></script>
   </head>
 
-  <body>
-    
+  <body class="flex flex-col min-h-screen">
+    <main class="container flex-grow py-8">
       
-      
-<h1>Posts Tagged with bins</h1>
+        
+        
+<h1 class="text-red-500">Posts Tagged with bins</h1>
 
 
   <li>
     <a href="/blog/posts/second/">example post 2</a>
   </li>
 
-      <footer >
+        <footer >
   <p>&copy; Sarah J Dawns
     2023</p>
 </footer>
-    
+      
+    </main>
   </body>
 
 </html>

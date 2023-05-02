@@ -9,14 +9,17 @@
     <link rel="icon" type="image" sizes="32x32" href="/assets/images/favicon.ico"/>
     <link rel="stylesheet" href="/assets/css/main.css"/>
     <link rel="stylesheet" href="/assets/css/input.css"/>
+    <script src="/assets/main.bundle.js" defer></script>
   </head>
 
-  <body>
-    {% block content %}
-      {% include 'layouts/partials/header.njk' %}
-      {{ content | safe }}
-      {% include 'layouts/partials/footer.njk' %}
-    {% endblock %}
+  <body class="flex flex-col min-h-screen">
+    <main class="container flex-grow py-8">
+      {% block content %}
+        {% include 'layouts/partials/header.njk' %}
+        {{ content | safe }}
+        {% include 'layouts/partials/footer.njk' %}
+      {% endblock %}
+    </main>
   </body>
 
 </html>
