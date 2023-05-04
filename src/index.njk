@@ -11,13 +11,16 @@ title: Empire Compost Club
         <div class="p-6 rounded-md bg-slate-200">
           {% block content %}
             <div class="max-w-2xl mx-auto">
-              {% set mostRecentPost = collections.posts[0] %}
+              {% set mostRecentPost = collections.posts | reverse | first %}
               <img class="object-cover object-center w-full h-40 mb-6 rounded" src="{{ mostRecentPost.url }}{{ mostRecentPost.data.image }}" alt="blogpost image">
                 <h1>{{ mostRecentPost.data.title }}</h1>
+                <p>
+                  <time>{{ mostRecentPost.data.date | postDate }}</time>
+                </p>
                 {{ mostRecentPost.content | safe }}
               </div>
               <ul>
-                {% for tag in tags %}
+                {% for tag in mostRecentPost.data.tags %}
                   <li>
                     <a href="/archive/tag/{{ tag | slugify }}">{{ tag }}</a>
                   </li>
