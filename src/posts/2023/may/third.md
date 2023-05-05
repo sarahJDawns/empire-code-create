@@ -1,13 +1,13 @@
 ---
 layout: layouts/post.njk
-title: example post 3
-description: this is some example post
+title: title 3
+description: this is description
 date: 2023-05-30
 author: sarah j dawns
 tags:
   - grid
 ---
 
-## test 2
+
 
 lksdfj;alkjfs; alskdjfa;lskdjfa;lskdf;alksd;jfa;sdlkjf;alksjd;flaj;sldfja;lskdjf;alskjd;falks

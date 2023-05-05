@@ -1,6 +1,6 @@
 --- 
 layout: partials/base.njk 
-title: Empire Compost Club 
+title: Empire Compost Club
 ---
 
 {% block content %}
@@ -11,7 +11,6 @@ title: Empire Compost Club
         <time>{{ date | postDate }}</time>
       </p>
       <p>{{ description }}</p>
-      <p>{{ author }}</p>
       {{ content | safe }}
       <ul>
         {% for tag in tags %}
@@ -20,7 +19,21 @@ title: Empire Compost Club
           </li>
         {% endfor %}
       </ul>
-    </article>
-  {% endblock %}
-  <a href="archive" class="mr-6 text-md font-semibold hover:text-gray-800">Previous</a>
-  <a href="about" class="mr-6 text-md font-semibold hover:text-gray-800">Next</a>
+      {% set prevPost = null %}
+      {% set nextPost = null %}
+      {% for post in collections.posts %}
+        {% if post.date < date and (prevPost == null or post.date > prevPost.date) %}
+          {% set prevPost = post %}
+        {% elseif post.date > date and (nextPost == null or post.date < nextPost.date) %}
+          {% set nextPost = post %}
+        {% endif %}
+      {% endfor %}
+      {% if prevPost %}
+        <a href="{{ prevPost.url }}">Previous</a>
+      {% endif %}
+      {% if nextPost %}
+        <a href="{{ nextPost.url }}">Next</a>
+      {% endif %}
+    </nav>
+  </article>
+{% endblock %}
