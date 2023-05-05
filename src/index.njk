@@ -9,39 +9,37 @@ title: Empire Compost Club
     <div class="flex flex-wrap text-left">
       <div class="px-8 py-6 lg:w-1/3 md:w-full">
         <div class="p-6 rounded-md bg-slate-200">
-          {% block content %}
-            <div class="max-w-2xl mx-auto">
-              {% set mostRecentPost = collections.posts | reverse | first %}
-              <img class="object-cover object-center w-full h-40 mb-6 rounded" src="{{ mostRecentPost.url }}{{ mostRecentPost.data.image }}" alt="blogpost image">
-                <h1>{{ mostRecentPost.data.title }}</h1>
-                <p>
-                  <time>{{ mostRecentPost.data.date | postDate }}</time>
-                </p>
-                {{ mostRecentPost.content | safe }}
-              </div>
-              <ul>
-                {% for tag in mostRecentPost.data.tags %}
-                  <li>
-                    <a href="/archive/tag/{{ tag | slugify }}">{{ tag }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-              {% set prevPost = null %}
-              {% set nextPost = null %}
-              {% for post in collections.posts %}
-                {% if post.date < mostRecentPost.date and (prevPost == null or post.date > prevPost.date) %}
-                  {% set prevPost = post %}
-                {% elseif post.date > mostRecentPost.date and (nextPost == null or post.date < nextPost.date) %}
-                  {% set nextPost = post %}
-                {% endif %}
+          <div class="max-w-2xl mx-auto">
+            {% set mostRecentPost = collections.posts | reverse | first %}
+            <img class="object-cover object-center w-full h-40 mb-6 rounded" src="{{ mostRecentPost.url }}{{ mostRecentPost.data.image }}" alt="blogpost image">
+              <h1>{{ mostRecentPost.data.title }}</h1>
+              <p>
+                <time>{{ mostRecentPost.data.date | postDate }}</time>
+              </p>
+              {{ mostRecentPost.content | safe }}
+            </div>
+            <ul>
+              {% for tag in mostRecentPost.data.tags %}
+                <li>
+                  <a href="/archive/tag/{{ tag | slugify }}">{{ tag }}</a>
+                </li>
               {% endfor %}
-              {% if prevPost %}
-                <a href="{{ prevPost.url }}">Previous</a>
+            </ul>
+            {% set prevPost = null %}
+            {% set nextPost = null %}
+            {% for post in collections.posts %}
+              {% if post.date < mostRecentPost.date and (prevPost == null or post.date > prevPost.date) %}
+                {% set prevPost = post %}
+              {% elseif post.date > mostRecentPost.date and (nextPost == null or post.date < nextPost.date) %}
+                {% set nextPost = post %}
               {% endif %}
-              {% if nextPost %}
-                <a href="{{ nextPost.url }}">Next</a>
-              {% endif %}
-            {% endblock %}
+            {% endfor %}
+            {% if prevPost %}
+              <a href="{{ prevPost.url }}">Previous</a>
+            {% endif %}
+            {% if nextPost %}
+              <a href="{{ nextPost.url }}">Next</a>
+            {% endif %}
           </div>
         </div>
       </div>

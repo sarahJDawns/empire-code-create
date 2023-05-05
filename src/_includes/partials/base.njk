@@ -17,11 +17,9 @@
   </head>
   <body class="flex flex-col min-h-screen">
     <main class="container flex-grow py-8">
-      {% block content %}
-        {% include 'partials/header.njk' %}
-        {{ content | safe }}
-        {% include 'partials/footer.njk' %}
-      {% endblock %}
+      {% include 'partials/header.njk' %}
+      {{ content | safe }}
+      {% include 'partials/footer.njk' %}
     </main>
   </body>
 </html>
