@@ -26,6 +26,21 @@ title: Empire Compost Club
                   </li>
                 {% endfor %}
               </ul>
+              {% set prevPost = null %}
+              {% set nextPost = null %}
+              {% for post in collections.posts %}
+                {% if post.date < mostRecentPost.date and (prevPost == null or post.date > prevPost.date) %}
+                  {% set prevPost = post %}
+                {% elseif post.date > mostRecentPost.date and (nextPost == null or post.date < nextPost.date) %}
+                  {% set nextPost = post %}
+                {% endif %}
+              {% endfor %}
+              {% if prevPost %}
+                <a href="{{ prevPost.url }}">Previous</a>
+              {% endif %}
+              {% if nextPost %}
+                <a href="{{ nextPost.url }}">Next</a>
+              {% endif %}
             {% endblock %}
           </div>
         </div>
