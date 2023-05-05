@@ -1,0 +1,15 @@
+{% set prevPost = null %}
+{% set nextPost = null %}
+{% for post in collections.posts %}
+  {% if post.date < date and (prevPost == null or post.date > prevPost.date) %}
+    {% set prevPost = post %}
+  {% elseif post.date > date and (nextPost == null or post.date < nextPost.date) %}
+    {% set nextPost = post %}
+  {% endif %}
+{% endfor %}
+{% if prevPost %}
+  <a href="{{ prevPost.url }}">Previous</a>
+{% endif %}
+{% if nextPost %}
+  <a href="{{ nextPost.url }}">Next</a>
+{% endif %}
