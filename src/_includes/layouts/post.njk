@@ -11,28 +11,8 @@ title: Empire Compost Club
     </p>
     <p>{{ description }}</p>
     {{ content | safe }}
-    {% include "components/tag.njk" %}
-    {# <ul>
-                                                      {% for tag in tags %}
-                                                        <li>
-                                                          <a href="/archive/tag/{{ tag | slugify }}">{{ tag }}</a>
-                                                        </li>
-                                                      {% endfor %}
-                                                    </ul> #}
+    {% for tag in tags %}
+      {% include "components/tag.njk" %}
+    {% endfor %}
     {% include "components/navigation.njk" %}
-    {# {% set prevPost = null %}
-                                                            {% set nextPost = null %}
-                                                            {% for post in collections.posts %}
-                                                              {% if post.date < date and (prevPost == null or post.date > prevPost.date) %}
-                                                                {% set prevPost = post %}
-                                                              {% elseif post.date > date and (nextPost == null or post.date < nextPost.date) %}
-                                                                {% set nextPost = post %}
-                                                              {% endif %}
-                                                            {% endfor %}
-                                                            {% if prevPost %}
-                                                              <a href="{{ prevPost.url }}">Previous</a>
-                                                            {% endif %}
-                                                            {% if nextPost %}
-                                                              <a href="{{ nextPost.url }}">Next</a>
-                                                            {% endif %} #}
   </article>

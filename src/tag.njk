@@ -14,12 +14,6 @@ eleventyComputed:
   <h1 class="text-red-500">{{ title }}
   </h1>
   {% for post in collections[tag] | reverse %}
-    <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <p>
-        <time>{{ post.date | postDate }}</time>
-      </p>
-      <p>{{ post.data.description }}</p>
-    </li>
+    {% include "components/postDetails.njk" %}
   {% endfor %}
 </section>
