@@ -3,36 +3,17 @@ layout: partials/base.njk
 title: Empire Compost Club 
 ---
 
-<div class="flex flex-col justify-center">
-  <div class="flex flex-col justify-center">
-    {% set mostRecentPost = collections.posts | reverse | first %}
-    <img class="object-cover object-center w-full h-40 mb-6 rounded" src="{{ mostRecentPost.url }}{{ mostRecentPost.data.image }}" alt="blogpost image">
-      <h1>{{ mostRecentPost.data.title }}</h1>
-      <p>
-        <time>{{ mostRecentPost.data.date | postDate }}</time>
-      </p>
-      {{ mostRecentPost.content | safe }}
-      <ul>
-        {% for tag in mostRecentPost.data.tags %}
-          <li>
-            {% include "components/tag.njk" %}
-          </li>
-        {% endfor %}
-      </ul>
-      {% set prevPost = null %}
-      {% set nextPost = null %}
-      {% for post in collections.posts %}
-        {% if post.date < mostRecentPost.date and (prevPost == null or post.date > prevPost.date) %}
-          {% set prevPost = post %}
-        {% elseif post.date > mostRecentPost.date and (nextPost == null or post.date < nextPost.date) %}
-          {% set nextPost = post %}
-        {% endif %}
+{% set mostRecentPost = collections.posts | reverse | first %}
+{% for post in collections.posts %}
+  {% if post === mostRecentPost %}
+    {% include "components/postDetails.njk" %}
+    {{ post.content | safe }}
+    <ul>
+      {% for tag in post.data.tags %}
+        <li>
+          {% include "components/tag.njk" %}
+        </li>
       {% endfor %}
-      {% if prevPost %}
-        <a href="{{ prevPost.url }}">Previous</a>
-      {% endif %}
-      {% if nextPost %}
-        <a href="{{ nextPost.url }}">Next</a>
-      {% endif %}
-    </div>
-  </div>
+    </ul>
+  {% endif %}
+{% endfor %}

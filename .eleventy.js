@@ -2,6 +2,16 @@ const { DateTime } = require("luxon");
 const charts = require("eleventy-charts");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+    const posts = collectionApi.getFilteredByGlob("src/posts/**/*.md");
+    for (let i = 0; i < posts.length; i++) {
+      const prevPost = posts[i - 1];
+      const nextPost = posts[i + 1];
+      posts[i].data["prevPost"] = prevPost;
+      posts[i].data["nextPost"] = nextPost;
+    }
+    return posts;
+  });
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
@@ -19,9 +29,6 @@ module.exports = function (eleventyConfig) {
     open: true,
   });
   eleventyConfig.setDataDeepMerge(true);
-  eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/**/*.md");
-  });
 
   return {
     dir: {
