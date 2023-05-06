@@ -3,36 +3,36 @@ layout: partials/base.njk
 title: Empire Compost Club
 ---
 
-{% block content %}
-  <article class="max-w-2xl mx-auto bg-white">
-    <img src="{{ image }}" alt="{{ imageAlt }}">
-      <h1 class="py-8 font-bold">{{ title }}</h1>
-      <p>
-        <time>{{ date | postDate }}</time>
-      </p>
-      <p>{{ description }}</p>
-      {{ content | safe }}
-      <ul>
-        {% for tag in tags %}
-          <li>
-            <a href="/archive/tag/{{ tag | slugify }}">{{ tag }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-      {% set prevPost = null %}
-      {% set nextPost = null %}
-      {% for post in collections.posts %}
-        {% if post.date < date and (prevPost == null or post.date > prevPost.date) %}
-          {% set prevPost = post %}
-        {% elseif post.date > date and (nextPost == null or post.date < nextPost.date) %}
-          {% set nextPost = post %}
-        {% endif %}
-      {% endfor %}
-      {% if prevPost %}
-        <a href="{{ prevPost.url }}">Previous</a>
-      {% endif %}
-      {% if nextPost %}
-        <a href="{{ nextPost.url }}">Next</a>
-      {% endif %}
-    </article>
-  {% endblock %}
+<article class="max-w-2xl mx-auto bg-white">
+  <img src="{{ image }}" alt="{{ imageAlt }}">
+    <h1 class="py-8 font-bold">{{ title }}</h1>
+    <p>
+      <time>{{ date | postDate }}</time>
+    </p>
+    <p>{{ description }}</p>
+    {{ content | safe }}
+    {% include "components/tag.njk" %}
+    {# <ul>
+                                                      {% for tag in tags %}
+                                                        <li>
+                                                          <a href="/archive/tag/{{ tag | slugify }}">{{ tag }}</a>
+                                                        </li>
+                                                      {% endfor %}
+                                                    </ul> #}
+    {% include "components/navigation.njk" %}
+    {# {% set prevPost = null %}
+                                                            {% set nextPost = null %}
+                                                            {% for post in collections.posts %}
+                                                              {% if post.date < date and (prevPost == null or post.date > prevPost.date) %}
+                                                                {% set prevPost = post %}
+                                                              {% elseif post.date > date and (nextPost == null or post.date < nextPost.date) %}
+                                                                {% set nextPost = post %}
+                                                              {% endif %}
+                                                            {% endfor %}
+                                                            {% if prevPost %}
+                                                              <a href="{{ prevPost.url }}">Previous</a>
+                                                            {% endif %}
+                                                            {% if nextPost %}
+                                                              <a href="{{ nextPost.url }}">Next</a>
+                                                            {% endif %} #}
+  </article>
