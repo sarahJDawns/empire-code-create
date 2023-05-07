@@ -3,16 +3,21 @@ layout: partials/base.njk
 title: Empire Compost Club
 ---
 
-<article class="max-w-2xl mx-auto bg-white">
-  <img src="{{ image }}" alt="{{ imageAlt }}">
-    <h1 class="py-8 font-bold">{{ title }}</h1>
+<section class="container mx-auto">
+  <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
+  <div
+    class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
+    {# <img src="{{ image }}" alt="{{ imageAlt }}"> #}
     <p>
       <time>{{ date | postDate }}</time>
     </p>
-    <p>{{ description }}</p>
-    {{ content | safe }}
+    <p class="pl-3">{{ description }}</p>
+    <article class="w-full py-8">
+      {{ content | safe }}
+    </article>
     {% for tag in tags %}
       {% include "components/tag.njk" %}
     {% endfor %}
-    {% include "components/navigation.njk" %}
-  </article>
+  </div>
+</section>
+{% include "components/navigation.njk" %}

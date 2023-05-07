@@ -7,13 +7,16 @@ pagination:
 layout: partials/base.njk 
 permalink: /archive/tag/{{tag | slugify }}
 eleventyComputed: 
-  title: Posts Tagged with {{tag}}
+  title: All About {{tag}}
 ---
 
-<section class="flex flex-col justify-center">
-  <h1 class="text-red-500">{{ title }}
-  </h1>
-  {% for post in collections[tag] | reverse %}
-    {% include "components/postDetails.njk" %}
-  {% endfor %}
+<section class="container mx-auto">
+  <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
+  <div class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
+    {% for post in collections[tag] | reverse %}
+      <div class="border-b border-brightOrange py-3">
+        {% include "components/postDetails.njk" %}
+      </div>
+    {% endfor %}
+  </div>
 </section>

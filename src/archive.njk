@@ -6,13 +6,19 @@ pagination:
   size: 10
 ---
 
-<h1>{{ title }}</h1>
-<ul>
-  {% for post in pagination.items | reverse %}
-    {% include "components/postDetails.njk" %}
-    {% for tag in post.data.tags %}
-      {% include "components/tag.njk" %}
+<section class="container mx-auto">
+  <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
+  <div class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
+    {% for post in pagination.items | reverse %}
+      <div class="border-b border-brightOrange py-3">
+        {% include "components/postDetails.njk" %}
+        {% for tag in post.data.tags %}
+          <p class="pt-2">
+            {% include "components/tag.njk" %}
+          </p>
+        {% endfor %}
+      </div>
     {% endfor %}
-  {% endfor %}
-</ul>
+  </div>
+</section>
 {% include "components/pagination.njk" %}

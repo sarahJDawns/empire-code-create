@@ -1,19 +1,22 @@
 --- 
 layout: partials/base.njk 
-title: Empire Compost Club 
+title: Welcome 
 ---
 
-{% set mostRecentPost = collections.posts | reverse | first %}
-{% for post in collections.posts %}
-  {% if post === mostRecentPost %}
-    {% include "components/postDetails.njk" %}
-    {{ post.content | safe }}
-    <ul>
-      {% for tag in post.data.tags %}
-        <li>
+<section class="container mx-auto">
+  <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
+  <div class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
+    {% set mostRecentPost = collections.posts | reverse | first %}
+    {% for post in collections.posts %}
+      {% if post === mostRecentPost %}
+        {% include "components/postDetails.njk" %}
+        <article class="w-full py-8">
+          {{ post.content | safe }}
+        </article>
+        {% for tag in post.data.tags %}
           {% include "components/tag.njk" %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-{% endfor %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

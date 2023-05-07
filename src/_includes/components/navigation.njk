@@ -1,12 +1,14 @@
-{% if nextPost.date %}
-  <p class="ctr">
-    <strong>Next</strong>:
-    <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-  </p>
-{% endif %}
-{% if prevPost.date %}
-  <p class="ctr">
-    <strong>Previous</strong>:
-    <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
-  </p>
-{% endif %}
+<div class="flex flex-row py-3">
+  {% if nextPost.date %}
+    <p class="px-2 align-baseline">
+      <strong class="text-darkBlue uppercase text-sm">Next</strong>:
+      <a href="{{ nextPost.url }}" class="text-sm">{{ nextPost.data.title }}</a>
+    </p>
+  {% endif %}
+  {% if prevPost.date %}
+    <p class="px-2 align-baseline">
+      <strong class="text-darkBlue uppercase text-sm">Previous</strong>:
+      <a href="{{ prevPost.url }}" class="text-sm">{{ prevPost.data.title }}</a>
+    </p>
+  {% endif %}
+</div>

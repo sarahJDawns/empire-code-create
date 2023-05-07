@@ -1,12 +1,11 @@
-<nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-    <li>
+<nav>
+  <ol class="flex flex-row py-3">
+    <li class="px-2 text-darkBlue uppercase text-sm font-bold align-baseline">
       {% if pagination.href.previous %}
         <a href="{{ pagination.href.previous }}">Previous</a>
         {% else %}Previous{% endif %}
     </li>
-    <li>
+    <li class="px-2 text-darkBlue uppercase text-sm font-bold align-baseline">
       {% if pagination.href.next %}
         <a href="{{ pagination.href.next }}">Next</a>
         {% else %}Next{% endif %}
