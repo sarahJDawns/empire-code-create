@@ -6,7 +6,7 @@ pagination:
   size: 10
 ---
 
-<section class="container mx-auto">
+<section class="w-full md:container mx-auto">
   <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
   <div class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
     {% for post in pagination.items | reverse %}

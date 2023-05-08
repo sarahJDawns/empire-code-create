@@ -18,6 +18,8 @@
     {% include 'partials/header.njk' %}
     {{ content | safe }}
     {% include 'partials/footer.njk' %}
-    <script type="text/javascript" src="{{ page.project | url }}"></script>
+    {% if jsFile %}
+      <script src="{{ jsFile }}"></script>
+    {% endif %}
   </body>
 </html>

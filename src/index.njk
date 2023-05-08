@@ -3,16 +3,14 @@ layout: partials/base.njk
 title: Welcome to_ 
 ---
 
-<section class="container mx-auto">
+<section class="w-full md:container mx-auto">
   <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
   <div class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
     {% set mostRecentPost = collections.posts | reverse | first %}
     {% for post in collections.posts %}
       {% if post === mostRecentPost %}
         {% include "components/postDetails.njk" %}
-        <article class="w-full py-8">
-          {{ post.content | safe }}
-        </article>
+        {% include "components/canvas.njk" %}
         {% for tag in post.data.tags %}
           {% include "components/tag.njk" %}
         {% endfor %}
@@ -20,3 +18,7 @@ title: Welcome to_
     {% endfor %}
   </div>
 </section>
+{% if mostRecentPost.data.jsFile %}
+  <script src="{{ mostRecentPost.data.jsFile }}"></script>
+  <script src="/assets/js/canvasComponent.js"></script>
+{% endif %}

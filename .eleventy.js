@@ -21,6 +21,9 @@ async function imageShortcode(src, cls, alt, sizes) {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addFilter("jsFile", function (page) {
+    return "src" + page.filePathStem + ".js";
+  });
   eleventyConfig.addCollection("posts", function (collectionApi) {
     const posts = collectionApi.getFilteredByGlob("src/posts/**/*.md");
     for (let i = 0; i < posts.length; i++) {
@@ -37,6 +40,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addPassthroughCopy("src/assets/images/");
   eleventyConfig.addPassthroughCopy("src/assets/css/");
+  eleventyConfig.addPassthroughCopy("src/assets/js/");
   eleventyConfig.addWatchTarget("src/assets/css/");
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
