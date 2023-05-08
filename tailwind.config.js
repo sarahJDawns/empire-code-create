@@ -7,7 +7,6 @@ module.exports = {
     },
     fontFamily: {
       body: ["Karla", "sans-serif"],
-      heading: ["Spectral", "sans-serif"],
       accent: ["IBM Plex Mono", "sans-serif"],
     },
     colors: {
