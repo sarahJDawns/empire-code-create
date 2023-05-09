@@ -1,7 +1,7 @@
 {
   "name": "empire-compost-club",
   "version": "1.0.0",
-  "description": "A personal generative art blog with p5.js.",
+  "description": "A personal blog for creative code p5.js.",
   "main": "main.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",

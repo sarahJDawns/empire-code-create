@@ -1,6 +1,6 @@
 # Empire Compost Club
 
-## A personal generative art blog.
+## A personal blog for creative code.
 
 ---
 

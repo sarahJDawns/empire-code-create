@@ -1,14 +1,14 @@
 <div class="flex flex-row py-3">
   {% if nextPost.date %}
     <p class="px-2 align-baseline">
-      <strong class="text-darkBlue uppercase text-sm">Next</strong>:
-      <a href="{{ nextPost.url }}" class="text-sm">{{ nextPost.data.title }}</a>
+      <strong class="text-darkBlue uppercase font-accent text-sm">Next:</strong>
+      <a href="{{ nextPost.url }}" class="text-sm uppercase">{{ nextPost.data.title }}</a>
     </p>
   {% endif %}
   {% if prevPost.date %}
     <p class="px-2 align-baseline">
-      <strong class="text-darkBlue uppercase text-sm">Previous</strong>:
-      <a href="{{ prevPost.url }}" class="text-sm">{{ prevPost.data.title }}</a>
+      <strong class="text-darkBlue uppercase font-accent text-sm">Previous:</strong>
+      <a href="{{ prevPost.url }}" class="text-sm uppercase">{{ prevPost.data.title }}</a>
     </p>
   {% endif %}
 </div>
