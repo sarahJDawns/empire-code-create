@@ -1,10 +1,8 @@
 # Empire Compost Club
 
-## A personal blog for creative code.
+## A blog for creative code.
 
----
-
-### Built With
+## Built With:
 
 - ![HTML]
 - ![Eleventy]
