@@ -1,7 +1,5 @@
 const margin = 30;
 let x = 0;
-let canvas;
-let a = 0;
 let isMouseOverCanvas = false;
 let isMousePressed = false;
 
