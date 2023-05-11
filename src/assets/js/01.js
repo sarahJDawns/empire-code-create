@@ -92,3 +92,7 @@ function changeColor() {
     stroke(255);
   }
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}

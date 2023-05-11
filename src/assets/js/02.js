@@ -32,3 +32,7 @@ function draw() {
   rectMode(CENTER);
   rect(x, y, 10, 10);
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}

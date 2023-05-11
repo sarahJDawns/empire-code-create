@@ -2,6 +2,12 @@
 
 ## A blog for creative code.
 
+---
+
+![img](src/assets/images/creativeCodingSet.png)
+
+---
+
 ## Built With:
 
 - ![HTML]
