@@ -1,4 +1,4 @@
-# Empire Compost Club
+# Empire Code Create
 
 ## A blog for creative code.
 

@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Empire Compost Club",
+  title: "Empire Code Create",
   url: "https://www.empirecompostclub.com",
   language: "en",
   description: "A blog for creative code with p5.js.",
