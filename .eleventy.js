@@ -1,5 +1,8 @@
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
+const seo = require("eleventy-plugin-seo");
+const unpkgInliner = require("eleventy-njk-unpkg-inliner");
+const site = require("./src/_data/site.js");
 
 async function imageShortcode(src, cls, alt, sizes) {
   let metadata = await Image(src, {
@@ -20,6 +23,15 @@ async function imageShortcode(src, cls, alt, sizes) {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncShortcode("inline", unpkgInliner);
+  eleventyConfig.addPlugin(seo, {
+    title: site.title,
+    description: site.description,
+    url: site.url,
+    author: site.author.name,
+    twitter: site.author.twitter,
+    image: site.image,
+  });
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addFilter("jsFile", function (page) {
     return "src" + page.filePathStem + ".js";
