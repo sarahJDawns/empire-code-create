@@ -1,6 +1,6 @@
 module.exports = {
   title: "Empire Code Create",
-  url: "https://www.empirecompostclub.com",
+  url: "https://empire-code-create.netlify.app",
   language: "en",
   description: "A blog for creative code with p5.js.",
   author: {
