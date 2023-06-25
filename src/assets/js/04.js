@@ -3,7 +3,7 @@ let circleClicked = false;
 
 function setup() {
   const canvasDiv = document.getElementById("myCanvas");
-  const canvas = createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(500, 500);
   canvas.parent(canvasDiv);
 }
 

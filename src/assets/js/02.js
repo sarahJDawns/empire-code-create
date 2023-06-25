@@ -4,9 +4,9 @@ let nextCanvas;
 
 function setup() {
   const canvasDiv = document.getElementById("myCanvas");
-  const canvas = createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(500, 500);
   canvas.parent(canvasDiv);
-  nextCanvas = createGraphics(windowWidth, windowHeight);
+  nextCanvas = createGraphics(500, 500);
   nextCanvas.clear;
   background(0);
 }
@@ -31,8 +31,4 @@ function draw() {
   stroke(255);
   rectMode(CENTER);
   rect(x, y, 10, 10);
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }

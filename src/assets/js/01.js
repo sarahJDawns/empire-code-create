@@ -1,11 +1,11 @@
-const margin = 30;
+const margin = 10;
 let x = 0;
 let isMouseOverCanvas = false;
 let isMousePressed = false;
 
 function setup() {
   const canvasDiv = document.getElementById("myCanvas");
-  const canvas = createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(500, 500);
   canvas.parent(canvasDiv);
   noLoop();
   canvas.mouseMoved(checkMouseOverCanvas);
@@ -22,8 +22,12 @@ function draw() {
 
   background(24, 50, 74);
 
-  for (let y = margin; y < height - margin; y += 10) {
-    drawLine(40, y, width - margin);
+  const lineSpacing = 10;
+
+  for (let x = margin; x < width - margin; x += lineSpacing) {
+    for (let y = margin; y < height - margin; y += lineSpacing) {
+      drawLine(x, y);
+    }
   }
 }
 
@@ -91,8 +95,4 @@ function changeColor() {
   } else {
     stroke(255);
   }
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }

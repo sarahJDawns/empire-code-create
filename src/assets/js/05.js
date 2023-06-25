@@ -2,7 +2,7 @@ let loopEnabled = false;
 
 function setup() {
   const canvasDiv = document.getElementById("myCanvas");
-  const canvas = createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(500, 500);
   canvas.parent(canvasDiv);
   canvas.mousePressed(startLoop);
   canvas.mouseReleased(stopLoop);
@@ -66,60 +66,6 @@ function draw() {
 
   pop();
 
-  // Fourth Circle
-  push();
-  translate(600, height / 1.5);
-  noFill();
-
-  strokeWeight(1);
-  stroke(getRainbowColor());
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += 0.05) {
-    let r = random(5, 100);
-    let x = r * cos(a);
-    let y = r * sin(a);
-    vertex(x, y);
-  }
-  endShape();
-
-  pop();
-
-  // Fifth Circle
-  push();
-  translate(800, height / 4);
-  noFill();
-
-  strokeWeight(1);
-  stroke(getRainbowColor());
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += 0.05) {
-    let r = random(5, 100);
-    let x = r * cos(a);
-    let y = r * sin(a);
-    vertex(x, y);
-  }
-  endShape();
-
-  pop();
-
-  // Sixth Circle
-  push();
-  translate(975, height / 2.5);
-  noFill();
-
-  strokeWeight(1);
-  stroke(getRainbowColor());
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += 0.05) {
-    let r = random(5, 100);
-    let x = r * cos(a);
-    let y = r * sin(a);
-    vertex(x, y);
-  }
-  endShape();
-
-  pop();
-
   // Draw lines
   stroke(7, 142, 35);
   strokeWeight(3);
@@ -130,12 +76,6 @@ function draw() {
   line(300, height / 3, 300, height);
   //3rd line
   line(400, height / 2, 400, height);
-  //4th line
-  line(600, height / 1.5, 600, height);
-  //5th line
-  line(800, height / 4, 800, height);
-  //6th line
-  line(975, height / 2.5, 975, height);
 
   noStroke();
   fill(7, 142, 35);
@@ -168,8 +108,4 @@ function startLoop() {
 function stopLoop() {
   loopEnabled = false;
   noLoop();
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }

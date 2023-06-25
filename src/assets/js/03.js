@@ -1,6 +1,6 @@
 function setup() {
   const canvasDiv = document.getElementById("myCanvas");
-  const canvas = createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(500, 500);
   canvas.parent(canvasDiv);
   frameRate(1);
 }
@@ -10,8 +10,8 @@ function draw() {
   background(0, 15);
 
   const posX = width / 2;
-  const rectSize = 5;
-  const rectSpacing = 75;
+  const rectSize = 2;
+  const rectSpacing = 10;
 
   for (let posY = 0; posY < height; posY += rectSpacing) {
     for (let posX = 0; posX < width; posX += rectSpacing) {
@@ -26,7 +26,7 @@ function draw() {
 
   rotate(radians(frameCount));
 
-  const circleSpacing = 300;
+  const circleSpacing = 200;
 
   const xPos = posX + rectSize + circleSpacing;
   const yPos = 0;
@@ -34,8 +34,4 @@ function draw() {
   noStroke();
   fill(255, 225, 0);
   ellipse(xPos, yPos, 30, 30);
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }

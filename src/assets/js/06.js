@@ -1,12 +1,17 @@
-let len = 300;
-let cloud1X = 200;
-let cloud2X = 500;
-let cloud3X = 800;
+let len;
+let cloud1X;
+let cloud2X;
+let cloud3X;
 
 function setup() {
   const canvasDiv = document.getElementById("myCanvas");
-  const canvas = createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(500, 500);
   canvas.parent(canvasDiv);
+
+  len = height * 0.25;
+  cloud1X = width * 0.2;
+  cloud2X = width * 0.5;
+  cloud3X = width * 0.8;
 }
 
 function draw() {
@@ -27,12 +32,14 @@ function draw() {
     cloud3X = -180;
   }
 
-  drawCloud(cloud1X, 100, 150, 50);
-  drawCloud(cloud2X, 200, 100, 30);
-  drawCloud(cloud3X, 150, 180, 60);
+  drawCloud(cloud1X, height * 0.2, width * 0.3, height * 0.1);
+  drawCloud(cloud2X, height * 0.4, width * 0.2, height * 0.06);
+  drawCloud(cloud3X, height * 0.3, width * 0.36, height * 0.12);
 
-  translate(400, height);
-  branch(175);
+  push();
+  translate(width / 2, height);
+  branch(len);
+  pop();
 }
 
 function branch(len) {
@@ -61,10 +68,10 @@ function branch(len) {
   }
 }
 
-function drawCloud(x, y, width, height) {
+function drawCloud(x, y, cloudWidth, cloudHeight) {
   noStroke();
   fill(255);
-  ellipse(x, y, width, height);
-  ellipse(x - width / 2, y, width * 0.6, height * 1.2);
-  ellipse(x + width / 2, y, width * 0.6, height * 1.2);
+  ellipse(x, y, cloudWidth, cloudHeight);
+  ellipse(x - cloudWidth / 2, y, cloudWidth * 0.6, cloudHeight * 1.2);
+  ellipse(x + cloudWidth / 2, y, cloudWidth * 0.6, cloudHeight * 1.2);
 }
