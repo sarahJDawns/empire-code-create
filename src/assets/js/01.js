@@ -8,6 +8,7 @@ function setup() {
   const canvas = createCanvas(500, 500);
   canvas.parent(canvasDiv);
   noLoop();
+
   canvas.mouseMoved(checkMouseOverCanvas);
   canvas.mousePressed(mousePressedOnCanvas);
   canvas.mouseReleased(mouseReleasedOnCanvas);
@@ -15,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  x = x + 0.01;
+  x += 0.01;
   if (x > width) {
     x = 0;
   }
@@ -24,30 +25,21 @@ function draw() {
 
   const lineSpacing = 10;
 
-  for (let x = margin; x < width - margin; x += lineSpacing) {
-    for (let y = margin; y < height - margin; y += lineSpacing) {
-      drawLine(x, y);
+  for (let xPos = margin; xPos < width - margin; xPos += lineSpacing) {
+    for (let yPos = margin; yPos < height - margin; yPos += lineSpacing) {
+      drawLine(xPos, yPos);
     }
   }
 }
 
 function drawLine(lineX, lineY) {
-  strokeWeight(1);
-
-  if (isMousePressed) {
-    stroke(255, 0, 0);
-  } else if (isMouseOverCanvas) {
-    stroke(255, 188, 47);
-  } else {
-    const colorValue = map(lineY, margin, height - margin, 5, 255);
-    stroke(colorValue);
-  }
-
+  const minColor = 5;
+  const maxColor = 255;
+  const lineSpacing = 55;
   const range = map(lineY, margin, height - margin, 0, 5);
 
   let prevX = lineX;
   let prevY = lineY;
-  const lineSpacing = 55;
 
   for (let x = lineX + lineSpacing; x < width - margin; x += lineSpacing) {
     const y = lineY + random(-range, range);
@@ -77,13 +69,15 @@ function mouseReleasedOnCanvas() {
 }
 
 function checkMouseOverCanvas() {
-  isMouseOverCanvas =
+  const isMouseInsideCanvas =
     mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height;
-  changeColor();
+  if (isMouseInsideCanvas) {
+    changeColor();
+  }
 }
 
 function mouseMovedOffCanvas() {
-  isMouseOverCanvas = false;
+  mouseOverCanvas = false;
   changeColor();
 }
 
