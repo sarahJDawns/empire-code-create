@@ -10,11 +10,11 @@ eleventyComputed:
   title: All About {{tag}}
 ---
 
-<section class="w-full md:container mx-auto">
-  <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
-  <div class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
+<section class="md:container w-full mx-auto">
+  <h1 class="font-accent text-darkBlue mx-auto my-20 text-lg text-center uppercase">{{ title }}</h1>
+  <div class="md:container font-body text-darkFont flex flex-col justify-center mb-20">
     {% for post in collections[tag] | reverse %}
-      <div class="border-b border-brightOrange py-3">
+      <div class="border-brightOrange py-3 border-b">
         {% include "components/postDetails.njk" %}
       </div>
     {% endfor %}

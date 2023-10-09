@@ -3,9 +3,9 @@ layout: partials/base.njk
 title: Welcome to_ 
 ---
 
-<section class="w-full md:container mx-auto">
-  <h1 class="font-accent my-20 uppercase text-darkBlue text-center text-lg mx-auto">{{ title }}</h1>
-  <div class="md:container flex flex-col justify-center font-body text-darkFont mb-20">
+<section class="md:container w-full mx-auto">
+  <h1 class="font-accent text-darkBlue mx-auto my-20 text-lg text-center uppercase">{{ title }}</h1>
+  <div class="md:container font-body text-darkFont flex flex-col justify-center mb-20">
     {% set mostRecentPost = collections.posts | reverse | first %}
     {% for post in collections.posts %}
       {% if post === mostRecentPost %}
